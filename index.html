@@ -171,16 +171,71 @@
         
         footer { background: var(--card-bg); padding: 20px 10%; text-align: center; margin-top: 50px; }
 
-        /* MOBILE */
-        @media (max-width: 991px) {
-            .home, .about { flex-direction: column; text-align: center; }
-            .home-img { width: 350px; height: 350px; margin-top: 30px; }
-            .r1 { width: 250px; height: 250px; } .r2 { width: 350px; height: 350px; }
-            .p1, .p2 { transform: translate(-50%, -50%) rotate(var(--deg)) translate(125px) rotate(calc(var(--deg) * -1)); }
-            .p3, .p4, .p5 { transform: translate(-50%, -50%) rotate(var(--deg)) translate(175px) rotate(calc(var(--deg) * -1)); }
-            .navbar { display: none; }
-            .input-box input { width: 100%; }
-        }
+       
+        }/* --- MOBILE RESPONSIVE FIX --- */
+@media (max-width: 991px) {
+    
+    .home, .about, .services-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    
+    section {
+        padding: 5rem 5% 2rem;
+    }
+
+
+    .home-content h1 {
+        font-size: 3rem;
+    }
+    .heading {
+        font-size: 3rem;
+    }
+    .home-img, .about-img {
+        width: 80%; 
+        margin: 2rem auto;
+    }
+    .home-img img, .about-img img {
+        width: 100%;
+        max-width: 350px; 
+    }
+
+    
+    .navbar {
+        display: none;
+    }
+    
+    .input-box {
+        flex-direction: column;
+    }
+    .input-box input {
+        width: 100%;
+    }
+}
+        /* --- FORCE BIG INPUTS (PC & Mobile) --- */
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;         
+    padding: 1.5rem;      
+    font-size: 1.6rem;    
+    color: #fff;          
+    background: #323946;  
+    border-radius: .8rem; 
+    margin: 0.7rem 0;     
+}
+
+.contact form textarea {
+    height: 250px;       
+    resize: none;         
+}
+
+.contact form .input-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
     </style>
 </head>
 <body>
@@ -318,7 +373,6 @@
         </div>
         
         <div class="input-box">
-            <input type="number" name="phone" placeholder="Mobile Number">
             <input type="text" name="subject" placeholder="Email Subject" required>
         </div>
         
@@ -338,4 +392,5 @@
         ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
     </script>
 </body>
+
 </html>
