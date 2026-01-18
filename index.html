@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-...
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salma | AI Engineer Portfolio</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <style>
-        
+        /* === VARIABLES & RESET === */
         :root {
-            /* Background */
             --bg-color: #0f172a; 
             --card-bg: #1e293b;
             --text-color: #e2e8f0;
@@ -28,13 +28,12 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             overflow-x: hidden;
-            
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 40%),
                 radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 40%);
         }
 
-        
+        /* === HEADER & NAV === */
         header {
             position: fixed; top: 0; left: 0; width: 100%; padding: 20px 10%;
             background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(15px);
@@ -50,9 +49,13 @@
         }
         .navbar a:hover, .navbar a.active { color: var(--primary); text-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
 
-        
+        /* === GLOBAL SECTION STYLES === */
         section { min-height: 100vh; padding: 10rem 10% 2rem; }
+        
+        .heading { text-align: center; font-size: 3rem; margin-bottom: 3rem; }
+        .heading span { color: var(--primary); }
 
+        /* === HOME SECTION === */
         .home { display: flex; align-items: center; justify-content: space-between; gap: 50px; }
 
         .home-content h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
@@ -61,13 +64,13 @@
         
         .home-content p { font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 600px; line-height: 1.6; }
 
-        
         .btn-box { display: flex; gap: 20px; }
         .btn {
             display: inline-block; padding: 14px 34px; background: var(--gradient);
             border-radius: 50px; font-size: 1rem; color: #fff; font-weight: 600;
             letter-spacing: 1px; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
             transition: .5s ease;
+            cursor: pointer;
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(139, 92, 246, 0.7); }
         
@@ -76,7 +79,6 @@
         }
         .btn-outline:hover { background: var(--primary); color: #fff; }
 
-        /* SOCIAL ICONS */
         .social-media { margin-top: 30px; }
         .social-media a {
             display: inline-flex; justify-content: center; align-items: center;
@@ -86,7 +88,7 @@
         }
         .social-media a:hover { background: var(--primary); color: #fff; box-shadow: 0 0 15px var(--primary); transform: translateY(-5px); }
 
-        /* animation */
+        /* Profile Animation */
         .home-img { width: 450px; height: 450px; position: relative; display: flex; justify-content: center; align-items: center; }
         .img-box { width: 250px; height: 250px; border-radius: 50%; overflow: hidden; border: 5px solid var(--card-bg); box-shadow: 0 0 50px rgba(139, 92, 246, 0.3); z-index: 2; }
         .img-box img { width: 100%; height: 100%; object-fit: cover; }
@@ -113,19 +115,14 @@
         @keyframes spin { 100% { transform: rotate(360deg); } }
         @keyframes anti-spin { 100% { transform: rotate(-360deg); } }
 
-
-        /*  ABOUT SECTION  */
+        /* === ABOUT SECTION === */
         .about { background: #131b2e; display: flex; justify-content: center; align-items: center; gap: 4rem; }
         .about-img img { width: 300px; border-radius: 20px; box-shadow: 0 0 30px rgba(6, 182, 212, 0.3); border: 2px solid var(--secondary); }
-        
-        .heading { text-align: center; font-size: 3rem; margin-bottom: 3rem; }
-        .heading span { color: var(--primary); }
         
         .about-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
         .about-content p { font-size: 1rem; margin-bottom: 2rem; line-height: 1.8; color: #cbd5e1; }
 
-
-        /*  SKILLS SECTION */
+        /* === SKILLS SECTION === */
         .skills { padding-top: 5rem; }
         .skills-container {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
@@ -139,8 +136,7 @@
         .skill-box h3 { font-size: 1.2rem; margin-bottom: 10px; }
         .skill-box p { font-size: 0.9rem; color: #94a3b8; }
 
-
-        /* PROJECTS SECTION  */
+        /* === PROJECTS SECTION === */
         .projects { background: #131b2e; }
         .project-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
         
@@ -159,93 +155,76 @@
         .proj-link { display: inline-block; color: var(--primary); font-weight: 600; font-size: 0.9rem; }
         .proj-link i { margin-left: 5px; }
 
-        /* --- FIX CONTACT FORM INPUTS --- */
-.contact form .input-box {
-    display: flex;
-    flex-direction: column; 
-    width: 100%;
-}
-
-.contact form .input-box input,
-.contact form textarea {
-    width: 100%;          
-    padding: 1.5rem;       
-    font-size: 1.6rem;     
-    color: #fff;
-    background: #323946;   
-    border-radius: .8rem;
-    margin: 1rem 0;        
-}
-
-
-.contact form .input-box input {
-    width: 100%;
-}
+        /* === CONTACT SECTION (FIXED) === */
+        .contact form {
+            max-width: 70rem;
+            margin: 1rem auto;
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        /* --- MOBILE RESPONSIVE FIX --- */
-@media (max-width: 991px) {
-    
-    .home, .about, .services-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-    }
+        
+        .contact form .input-box {
+            display: flex;
+            flex-direction: column; /* Stacked layout */
+            width: 100%;
+        }
 
-    
-    section {
-        padding: 5rem 5% 2rem;
-    }
+        .contact form .input-box input,
+        .contact form textarea {
+            width: 100%;
+            padding: 1.5rem;
+            font-size: 1.6rem;
+            color: #fff;
+            background: #323946;
+            border-radius: .8rem;
+            margin: 0.7rem 0;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        
+        .contact form .input-box input:focus,
+        .contact form textarea:focus {
+            border-color: var(--primary);
+            background: #1e293b;
+        }
 
+        .contact form textarea {
+            height: 250px;
+            resize: none;
+        }
 
-    .home-content h1 {
-        font-size: 3rem;
-    }
-    .heading {
-        font-size: 3rem;
-    }
-    .home-img, .about-img {
-        width: 80%; 
-        margin: 2rem auto;
-    }
-    .home-img img, .about-img img {
-        width: 100%;
-        max-width: 350px; 
-    }
+        /* Footer */
+        footer {
+            display: flex; justify-content: center; align-items: center; padding: 2rem 9%; background: var(--bg-color);
+        }
+        footer p { font-size: 1rem; color: #94a3b8; }
 
-    
-    .navbar {
-        display: none;
-    }
-    
-    .input-box {
-        flex-direction: column;
-    }
-    .input-box input {
-        width: 100%;
-    }
-}
-        /* FORCE BIG INPUTS (PC & Mobile) */
-.contact form .input-box input,
-.contact form textarea {
-    width: 100%;         
-    padding: 1.5rem;      
-    font-size: 1.6rem;    
-    color: #fff;          
-    background: #323946;  
-    border-radius: .8rem; 
-    margin: 0.7rem 0;     
-}
+        /* === MOBILE RESPONSIVENESS === */
+        @media (max-width: 991px) {
+            .home, .about, .services-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
 
-.contact form textarea {
-    height: 250px;       
-    resize: none;         
-}
+            section {
+                padding: 5rem 5% 2rem;
+            }
 
-.contact form .input-box {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
+            .home-content h1 { font-size: 3rem; }
+            .heading { font-size: 3rem; }
+
+            .home-img, .about-img {
+                width: 80%; 
+                margin: 2rem auto;
+            }
+            .home-img img, .about-img img {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .navbar { display: none; } /* Hide Navbar on mobile for now */
+        }
     </style>
 </head>
 <body>
@@ -255,7 +234,8 @@
         <nav class="navbar">
             <a href="#home" class="active">Home</a>
             <a href="#about">About</a>
-            <a href="#skills">Skills</a> <a href="#projects">Work</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Work</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -277,19 +257,16 @@
             </div>
 
             <div class="social-media">
-    <a href="https://www.linkedin.com/in/salma-el-mansoury-90a2a433a" target="_blank">
-        <i class='bx bxl-linkedin'></i>
-    </a>
-
-    <a href="https://github.com/salmaelmansoury79-pixel" target="_blank">
-    <i class='bx bxl-github'></i>
-</a>
-        
-
-    <a href="https://www.instagram.com/salma_elmansoury404" target="_blank">
-        <i class='bx bxl-instagram'></i>
-    </a>
-</div>
+                <a href="https://www.linkedin.com/in/salma-el-mansoury-90a2a433a" target="_blank">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+                <a href="https://github.com/salmaelmansoury79-pixel" target="_blank">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a href="https://www.instagram.com/salma_elmansoury404" target="_blank">
+                    <i class='bx bxl-instagram'></i>
+                </a>
+            </div>
         </div>
 
         <div class="home-img reveal-right">
@@ -351,7 +328,7 @@
     </section>
 
     <section class="projects" id="projects">
-        <h2 class="heading">Latest <span>Project</span></h2>
+        <h2 class="heading">Latest <span>Projects</span></h2>
         <div class="project-container reveal-bottom">
             
             <div class="project-card">
@@ -359,7 +336,7 @@
                 <div class="proj-info">
                     <h4>AI Air Canvas</h4>
                     <p>Draw in the air using hand gestures! Built with Python, OpenCV and MediaPipe.</p>
-                    <a href="https://github.com/https://github.com/salmaelmansoury79-pixel/air-canvas" target="_blank" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/salmaelmansoury79-pixel/air-canvas" target="_blank" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -368,7 +345,7 @@
                 <div class="proj-info">
                     <h4>Student Management</h4>
                     <p>A desktop app to manage students using Java & MySQL.</p>
-                    <a href="#" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/salmaelmansoury79-pixel" target="_blank" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -377,31 +354,35 @@
                 <div class="proj-info">
                     <h4>Face Recognition</h4>
                     <p>Attendance system using Face Recognition libraries.</p>
-                    <a href="#" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
+                    <a href="https://github.com/salmaelmansoury79-pixel" target="_blank" class="proj-link">View Code <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
         </div>
+    </section>
+
     <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span></h2>
-    
-    <form action="https://formsubmit.co/salma.elmansoury.79@edu.uiz.ac.ma" method="POST" class="reveal-bottom">
+        <h2 class="heading">Contact <span>Me</span></h2>
         
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-        </div>
-        
-        <div class="input-box">
-            <input type="text" name="subject" placeholder="Email Subject" required>
-        </div>
-        
-        <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
-        
-        <button type="submit" class="btn">Send Message</button>
-    </form>
-</section>
+        <form action="https://formsubmit.co/salma.elmansoury.79@edu.uiz.ac.ma" method="POST" class="reveal-bottom">
+            
+            <div class="input-box">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="input-box">
+                <input type="text" name="subject" placeholder="Email Subject" required>
+            </div>
+            
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+            
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
     <footer>
-        <p>Copyright &copy; 2026 by Salma | All Rights Reserved.</p>
+        <p>Copyright &copy; 2026 by Salma El Mansoury | All Rights Reserved.</p>
     </footer>
 
     <script>
@@ -411,6 +392,4 @@
         ScrollReveal().reveal('.reveal-bottom', { origin: 'bottom' });
     </script>
 </body>
-
 </html>
-
