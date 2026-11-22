@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salma El Mansoury | Applied AI & Data Engineer</title>
+<meta name="description" content="Final-year Computer Science student (AI & Software Engineering) at FSA Ouarzazate. Applied AI, computer vision, Python, SQL and data pipelines. Looking for an AI or data engineering internship.">
+<meta property="og:title" content="Salma El Mansoury | Applied AI & Data Engineer">
+<meta property="og:description" content="Applied AI, computer vision, Python, SQL and data pipelines. Looking for an internship.">
+<meta property="og:image" content="me.jpeg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f172a;--card:#1e293b;--alt:#131b2e;--text:#e2e8f0;--muted:#94a3b8;--primary:#8b5cf6;--secondary:#06b6d4;--gradient:linear-gradient(to right,#8b5cf6,#06b6d4)}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;background-image:radial-gradient(circle at 10% 20%,rgba(139,92,246,.15),transparent 40%),radial-gradient(circle at 90% 80%,rgba(6,182,212,.15),transparent 40%)}
+header{position:fixed;top:0;left:0;width:100%;padding:18px 8%;background:rgba(15,23,42,.85);backdrop-filter:blur(15px);display:flex;justify-content:space-between;align-items:center;z-index:100;border-bottom:1px solid rgba(255,255,255,.05)}
+.logo{font-size:1.6rem;color:#fff;font-weight:700}.logo span{color:var(--primary)}
+.navbar a{color:var(--text);margin-left:32px;font-weight:500;transition:.3s}
+.navbar a:hover{color:var(--primary)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+:focus-visible{outline:2px solid var(--secondary);outline-offset:3px}
+section{padding:8rem 8% 3rem}
+.heading{text-align:center;font-size:2.4rem;margin-bottom:2.5rem}
+.heading span,.accent{color:var(--primary)}
+.grad{background:var(--gradient);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.home{min-height:100vh;display:flex;align-items:center;justify-content:space-between;gap:50px}
+.home h3{font-size:1.4rem;margin-bottom:.8rem}
+.home h1{font-size:3.6rem;line-height:1.15;margin-bottom:1rem;color:#fff}
+.home p{font-size:1.05rem;line-height:1.7;margin:1rem 0 2rem;max-width:580px;color:#cbd5e1}
+.btn-box{display:flex;gap:16px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 32px;background:var(--gradient);border:2px solid transparent;border-radius:50px;color:#fff;font-weight:600;cursor:pointer;box-shadow:0 0 20px rgba(139,92,246,.35);transition:.3s;font-size:1rem}
+.btn:hover{transform:translateY(-4px)}
+.btn-outline{background:transparent;border-color:var(--primary);box-shadow:none;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.social a{display:inline-flex;justify-content:center;align-items:center;width:44px;height:44px;border:2px solid var(--primary);border-radius:50%;color:var(--primary);margin:28px 12px 0 0;transition:.3s}
+.social a:hover{background:var(--primary);color:#fff}
+/* Hero visual : détection animée + planètes */
+.home-img{width:420px;height:420px;position:relative;display:flex;justify-content:center;align-items:center;flex-shrink:0}
+.img-box{width:250px;height:250px;border-radius:50%;overflow:hidden;border:5px solid var(--card);box-shadow:0 0 50px rgba(139,92,246,.3);z-index:2;position:relative}
+.img-box img{width:100%;height:100%;object-fit:cover}
+.scan{position:absolute;inset:0;background:linear-gradient(to bottom,transparent,rgba(6,182,212,.45),transparent);height:40px;animation:scan 3s ease-in-out infinite;z-index:3}
+.bbox{position:absolute;border:2px solid var(--secondary);border-radius:6px;z-index:4;animation:pulse 2.4s ease-in-out infinite;box-shadow:0 0 12px rgba(6,182,212,.5)}
+.bbox::after{content:attr(data-label);position:absolute;top:-22px;left:-2px;background:var(--secondary);color:#0f172a;font-size:.65rem;font-weight:700;padding:2px 6px;border-radius:4px;white-space:nowrap}
+.b1{width:120px;height:140px;top:60px;left:40px}
+.b2{width:95px;height:85px;top:150px;left:200px;animation-delay:.8s}
+.ring{position:absolute;width:350px;height:350px;border-radius:50%;border:1px dashed rgba(255,255,255,.2);animation:spin 20s linear infinite}
+.planet{position:absolute;top:50%;left:50%;width:52px;height:52px;margin:-26px;background:var(--card);border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:1.6rem;border:1px solid rgba(255,255,255,.1);animation:spin 20s linear infinite reverse}
+.p1{transform:rotate(0deg) translate(175px) rotate(0deg)}
+.p2{transform:rotate(120deg) translate(175px) rotate(-120deg)}
+.p3{transform:rotate(240deg) translate(175px) rotate(-240deg)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes scan{0%{top:0;opacity:0}10%{opacity:1}90%{opacity:1}100%{top:calc(100% - 40px);opacity:0}}
+@keyframes pulse{0%,100%{opacity:.5}50%{opacity:1}}
+.about{background:var(--alt)}
+.about p{max-width:760px;margin:0 auto 1.2rem;line-height:1.8;color:#cbd5e1;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.6rem}
+.skill-box{background:var(--card);padding:28px 22px;border-radius:15px;text-align:center;border:1px solid rgba(255,255,255,.05);transition:.3s}
+.skill-box:hover{border-color:var(--primary)}
+.skill-box h3{font-size:1.15rem;margin-bottom:8px}
+.skill-box p{font-size:.9rem;color:var(--muted);line-height:1.5}
+.logos{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.logos i{font-size:2.4rem}
+.bar{height:6px;background:rgba(255,255,255,.08);border-radius:6px;margin-top:14px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--gradient);border-radius:6px;transition:width 1.4s ease}
+.skill-box.show .bar span{width:var(--w)}
+.projects{background:var(--alt)}
+.project-card{background:var(--bg);border-radius:18px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.project-card:hover{transform:translateY(-6px)}
+.proj-img{height:150px;background:#2d3748;display:flex;align-items:center;justify-content:center;gap:12px;color:#64748b;font-size:2.4rem}
+.proj-info{padding:22px;display:flex;flex-direction:column;flex:1}
+.proj-info h4{font-size:1.3rem;margin-bottom:8px}
+.proj-info p{color:var(--muted);font-size:.92rem;line-height:1.55;margin-bottom:14px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tags span{font-size:.75rem;padding:3px 10px;border-radius:20px;border:1px solid rgba(6,182,212,.5);color:var(--secondary)}
+.proj-link{margin-top:auto;color:var(--primary);font-weight:600;font-size:.9rem;margin-right:14px}
+/* Pipeline animé */
+.pipeline{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin-top:2rem}
+.step{background:var(--card);border:1px solid rgba(139,92,246,.4);border-radius:12px;padding:12px 18px;font-size:.9rem;color:#fff;opacity:.35;transition:opacity .5s,box-shadow .5s}
+.step.active{opacity:1;box-shadow:0 0 18px rgba(139,92,246,.45)}
+.arrow{color:var(--secondary);font-size:1.2rem;opacity:.35;transition:opacity .5s}
+.arrow.active{opacity:1}
+.contact-wrap{max-width:620px;margin:0 auto}
+.contact-info h3{font-size:1.5rem;margin-bottom:.8rem}
+.contact-info>p{color:#cbd5e1;line-height:1.7;margin-bottom:1.6rem}
+.c-item{display:flex;align-items:center;gap:16px;padding:14px 18px;margin-bottom:14px;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;color:var(--text);transition:.3s}
+.c-item:hover{border-color:var(--primary);transform:translateX(6px)}
+.c-item i{width:44px;height:44px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border-radius:12px;background:var(--gradient);color:#fff;font-size:1.2rem}
+.c-item small{display:block;color:var(--muted);font-size:.8rem}
+.c-item span{font-weight:500;word-break:break-all}
+footer{text-align:center;padding:2rem 8%;color:var(--muted);font-size:.9rem}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+  .skill-box.show .bar span{width:var(--w)}
+  .step,.arrow{opacity:1}
+}
+@media(max-width:991px){
+.menu-btn{display:block}
+.navbar{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(15,23,42,.98);flex-direction:column;padding:10px 8% 20px}
+.navbar.open{display:flex}
+.navbar a{margin:0;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+section{padding:6rem 6% 2rem}
+.home{flex-direction:column-reverse;text-align:center;gap:20px;padding-top:7rem}
+.home p{margin-left:auto;margin-right:auto}
+.btn-box{justify-content:center}
+.home h1{font-size:2.5rem}
+.home-img{width:300px;height:300px}.img-box{width:190px;height:190px}.ring{width:270px;height:270px}
+.p1{transform:rotate(0deg) translate(135px) rotate(0deg)}.p2{transform:rotate(120deg) translate(135px) rotate(-120deg)}.p3{transform:rotate(240deg) translate(135px) rotate(-240deg)}
+.b1{left:10px}.b2{left:150px}
+}
+</style>
+</head>
+<body>
+<header>
+<a href="#home" class="logo">Salma<span>.</span></a>
+<button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu"><i class="fas fa-bars"></i></button>
+<nav class="navbar" id="nav">
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="home" id="home">
+<div class="reveal">
+<h3>Hello, I'm</h3>
+<h1>Salma El Mansoury</h1>
+<h3>Aspiring <span class="grad">Applied AI &amp; Data Engineer</span></h3>
+<p>Final-year Computer Science student (AI &amp; Software Engineering) at the Faculty of Applied Sciences (FSA), Ouarzazate. I build computer vision systems with YOLOv8 and OpenCV, and data pipelines with Python and SQL. I'm looking for an <strong>AI or data engineering internship</strong>.</p>
+<div class="btn-box">
+<a href="cv_salma.pdf" download class="btn">Download CV</a>
+<a href="#contact" class="btn btn-outline">Contact me</a>
+</div>
+<div class="social">
+<a href="https://www.linkedin.com/in/salma-el-mansoury-90a2a433a" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://github.com/salmaelmansoury79-pixel" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+</div>
+</div>
+<div class="home-img reveal">
+<div class="img-box">
+<img src="me.jpeg" alt="Portrait de Salma El Mansoury">
+<div class="scan"></div>
+</div>
+<div class="bbox b1" data-label="person 0.94"></div>
+<div class="bbox b2" data-label="car 0.91"></div>
+<div class="ring">
+<div class="planet p1"><i class="devicon-python-plain colored" title="Python"></i></div>
+<div class="planet p2"><i class="devicon-opencv-plain colored" title="OpenCV"></i></div>
+<div class="planet p3"><i class="devicon-pytorch-original colored" title="PyTorch"></i></div>
+</div>
+</div>
+</section>
+
+<section class="about" id="about">
+<h2 class="heading">About <span>me</span></h2>
+<p class="reveal">I'm a final-year Computer Science student in the AI &amp; Software Engineering track at the Faculty of Applied Sciences (FSA) in Ouarzazate, Ibn Zohr University. My focus is applied AI: computer vision, machine learning and the software that makes them useful.</p>
+<p class="reveal">I learn by building. My projects range from real-time detection with YOLOv8 and MediaPipe to an end-to-end data pipeline deployed on the cloud. I'm looking for an internship in AI or data engineering where I can learn from experienced engineers.</p>
+<div class="pipeline reveal" id="pipeline" aria-label="Pipeline : Données, Modèle, Application, Résultat">
+<div class="step">Données</div><span class="arrow">→</span>
+<div class="step">Modèle IA</div><span class="arrow">→</span>
+<div class="step">Application</div><span class="arrow">→</span>
+<div class="step">Résultat</div>
+</div>
+</section>
+
+<section class="skills" id="skills">
+<h2 class="heading">My <span>skills</span></h2>
+<div class="grid reveal">
+<div class="skill-box" style="--w:90%"><div class="logos"><i class="devicon-python-plain colored"></i><i class="devicon-opencv-plain colored"></i></div><h3>AI &amp; computer vision</h3><p>YOLOv8, OpenCV, MediaPipe, DeepFace. Machine learning fundamentals.</p><div class="bar"><span></span></div></div>
+<div class="skill-box" style="--w:85%"><div class="logos"><i class="devicon-python-plain colored"></i><i class="devicon-fastapi-plain colored"></i><i class="devicon-pandas-original colored"></i></div><h3>Python</h3><p>Pandas, NumPy, FastAPI, automation and data processing.</p><div class="bar"><span></span></div></div>
+<div class="skill-box" style="--w:80%"><div class="logos"><i class="devicon-mysql-original colored"></i><i class="devicon-postgresql-plain colored"></i></div><h3>Databases &amp; data pipelines</h3><p>SQL, PostgreSQL (Supabase), ETL, Streamlit dashboards.</p><div class="bar"><span></span></div></div>
+<div class="skill-box" style="--w:75%"><div class="logos"><i class="devicon-java-plain colored"></i><i class="devicon-cplusplus-plain colored"></i></div><h3>Programming</h3><p>Java (OOP), C++, data structures and algorithms.</p><div class="bar"><span></span></div></div>
+<div class="skill-box" style="--w:70%"><div class="logos"><i class="devicon-git-plain colored"></i><i class="devicon-github-original" style="color:#fff" title="GitHub"></i><i class="devicon-vscode-plain colored"></i><i class="devicon-linux-plain" style="color:#fcc624" title="Linux"></i></div><h3>Tools</h3><p>Git, GitHub, VS Code, Linux basics.</p><div class="bar"><span></span></div></div>
+<div class="skill-box" style="--w:65%"><div class="logos"><i class="fas fa-robot" style="color:#8b5cf6" title="LLM"></i><i class="fas fa-chart-column" style="color:#f2c811" title="Power BI"></i></div><h3>LLM &amp; Power BI</h3><p>Connecting LLM APIs to data pipelines, and dashboards.</p><div class="bar"><span></span></div></div>
+</div>
+</section>
+
+<section class="projects" id="projects">
+<h2 class="heading">My <span>projects</span></h2>
+<div class="grid reveal">
+<div class="project-card">
+<div class="proj-img"><i class="fas fa-car-side" style="color:#8b5cf6"></i><i class="devicon-opencv-plain colored"></i></div>
+<div class="proj-info">
+<h4>AI Traffic Monitor</h4>
+<p>Detects and tracks cars, buses and trucks in real-time video using YOLOv8.</p>
+<div class="tags"><span>YOLOv8</span><span>OpenCV</span><span>Python</span></div>
+<div class="btn-box"><a href="https://github.com/salmaelmansoury79-pixel/Traffic-Monitor-YOLO" target="_blank" rel="noopener" class="proj-link">View code <i class="fas fa-external-link-alt"></i></a></div>
+</div>
+</div>
+<div class="project-card">
+<div class="proj-img"><i class="fas fa-hand" style="color:#06b6d4"></i><i class="devicon-opencv-plain colored"></i></div>
+<div class="proj-info">
+<h4>AI Air Canvas</h4>
+<p>Draw in the air with hand gestures, tracked through the webcam.</p>
+<div class="tags"><span>MediaPipe</span><span>OpenCV</span><span>Python</span></div>
+<div class="btn-box"><a href="https://github.com/salmaelmansoury79-pixel/air-canvas" target="_blank" rel="noopener" class="proj-link">View code <i class="fas fa-external-link-alt"></i></a></div>
+</div>
+</div>
+<div class="project-card">
+<div class="proj-img"><i class="devicon-python-plain colored"></i><i class="devicon-postgresql-plain colored"></i><i class="fas fa-cloud" style="color:#06b6d4"></i></div>
+<div class="proj-info">
+<h4>World Cup 2026 Analytics Dashboard</h4>
+<p>End-to-end pipeline: an ETL job pulls match data from an API (handling rate limits), stores it in Supabase, and feeds a live Streamlit dashboard.</p>
+<div class="tags"><span>Python</span><span>ETL</span><span>Supabase</span><span>Streamlit</span></div>
+<div class="btn-box"><a href="https://world-cup-2026-dashboard-yrkdrvb2vzly4vufjdveoa.streamlit.app/" target="_blank" rel="noopener" class="proj-link">Live dashboard <i class="fas fa-external-link-alt"></i></a><a href="https://lnkd.in/eNze2ptK" target="_blank" rel="noopener" class="proj-link">View code <i class="fas fa-external-link-alt"></i></a></div>
+</div>
+</div>
+<div class="project-card">
+<div class="proj-img"><i class="devicon-python-plain colored"></i><i class="devicon-opencv-plain colored"></i><i class="fas fa-file-excel" style="color:#21a366"></i></div>
+<div class="proj-info">
+<h4>Smart Attendance</h4>
+<p>Recognises faces in real time and logs attendance automatically into an Excel file.</p>
+<div class="tags"><span>DeepFace</span><span>OpenCV</span><span>Excel</span></div>
+<div class="btn-box"><a href="https://github.com/salmaelmansoury79-pixel/Smart-Attendance-System" target="_blank" rel="noopener" class="proj-link">View code <i class="fas fa-external-link-alt"></i></a></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<h2 class="heading">Contact <span>me</span></h2>
+<div class="contact-wrap">
+<div class="contact-info reveal">
+<h3>Let's talk about an internship</h3>
+<p>The fastest way to reach me is by email or LinkedIn. I usually reply within a few days.</p>
+<a class="c-item" href="mailto:salma.elmansoury.79@edu.uiz.ac.ma"><i class="fas fa-envelope"></i><div><small>Email</small><span>salma.elmansoury.79@edu.uiz.ac.ma</span></div></a>
+<a class="c-item" href="https://www.linkedin.com/in/salma-el-mansoury-90a2a433a" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><div><small>LinkedIn</small><span>Salma El Mansoury</span></div></a>
+<a class="c-item" href="https://github.com/salmaelmansoury79-pixel" target="_blank" rel="noopener"><i class="fab fa-github"></i><div><small>GitHub</small><span>salmaelmansoury79-pixel</span></div></a>
+<div class="c-item"><i class="fas fa-location-dot"></i><div><small>Location</small><span>Ouarzazate, Morocco</span></div></div>
+<a href="mailto:salma.elmansoury.79@edu.uiz.ac.ma" class="btn" style="margin-top:10px;display:inline-block">Send me an email</a>
+</div>
+</div>
+</section>
+
+<footer>&copy; 2026 Salma El Mansoury</footer>
+
+<script>
+// Menu mobile
+const nav=document.getElementById('nav');
+document.getElementById('menuBtn').onclick=()=>nav.classList.toggle('open');
+nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
+
+// Apparition au scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}
+}),{threshold:.15});
+document.querySelectorAll('.reveal,.skill-box').forEach(el=>io.observe(el));
+
+// Pipeline : les étapes s'allument une par une
+const steps=[...document.querySelectorAll('#pipeline .step')];
+const arrows=[...document.querySelectorAll('#pipeline .arrow')];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduce){steps.forEach(s=>s.classList.add('active'));arrows.forEach(a=>a.classList.add('active'));}
+else{
+  let i=0;
+  setInterval(()=>{
+    steps.forEach(s=>s.classList.remove('active'));
+    arrows.forEach(a=>a.classList.remove('active'));
+    steps[i].classList.add('active');
+    if(arrows[i])arrows[i].classList.add('active');
+    i=(i+1)%steps.length;
+  },900);
+}
+</script>
+</body>
+</html>
